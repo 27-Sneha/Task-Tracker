@@ -46,21 +46,6 @@ const Home = () => {
   });
 
   useEffect(() => {
-    const getProjectList = async () => {
-      try {
-        const response = await getProjects();
-        setProjectList(response.data);
-        if (response.data.length === 0) return;
-        await getTaskList(response.data[0]._id);
-      } catch (error) {
-        console.log("Error fetching project list:", error);
-        setSnackbar({
-          open: true,
-          message: error.response.data.message,
-          severity: "error",
-        });
-      }
-    };
     getProjectList();
   }, []);
 
@@ -69,6 +54,22 @@ const Home = () => {
       getTaskList(projectList[selectedProjectIndex]._id);
     }
   }, [selectedProjectIndex]);
+
+  const getProjectList = async () => {
+    try {
+      const response = await getProjects();
+      setProjectList(response.data);
+      if (response.data.length === 0) return;
+      await getTaskList(response.data[0]._id);
+    } catch (error) {
+      console.log("Error fetching project list:", error);
+      setSnackbar({
+        open: true,
+        message: error.response.data.message,
+        severity: "error",
+      });
+    }
+  };
 
   const getTaskList = async (id) => {
     try {
@@ -102,10 +103,11 @@ const Home = () => {
         name: projectName,
       };
       await createProject(payload);
+      await getProjectList();
       setSnackbar({
         open: true,
         message: "Project created successfully!!",
-        severity: "error",
+        severity: "success",
       });
     } catch (error) {
       console.log("Error creating project:", error);

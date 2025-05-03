@@ -52,7 +52,7 @@ const TaskContainer = ({ tasks, handleOpenUpdateTaskModal, setTask }) => {
             >
               {formatDate(task.createdAt)}
             </Typography>
-            {task.completedAt && (
+            {task.status === "completed" && (
               <Typography
                 sx={{ color: "text.secondary", fontSize: "14px" }}
                 textAlign="end"
