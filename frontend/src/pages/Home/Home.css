@@ -1,0 +1,22 @@
+.home-container{
+    gap: 30px !important;
+    height: 100%;
+}
+
+.project-controls-container{
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px !important;
+}
+
+.project-controls-btn{
+    text-transform: none !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+}
+
+.task-list-container{
+    background-color: #f2f4f5;
+    border-radius: 5px;
+    padding: 10px 4px;
+}

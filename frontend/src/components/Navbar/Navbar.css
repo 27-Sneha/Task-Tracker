@@ -1,0 +1,24 @@
+.navbar-container{
+    align-items: center;
+    padding: 14px 20px;
+    background-color: #0070b9;
+}
+
+.navbar-title{
+    font-size: 25px !important;
+    font-weight: bold !important;
+    color: white;
+}
+
+.navbar-logout-btn{
+    padding: 4px 10px !important;
+    background-color: white !important;
+    color: black !important;
+    text-transform: none !important;
+    border-radius: 5px !important;
+}
+
+.navbar-logout-item{
+    display: flex;
+    justify-content: end;
+}

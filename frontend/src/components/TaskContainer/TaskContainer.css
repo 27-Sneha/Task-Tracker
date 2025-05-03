@@ -1,0 +1,12 @@
+.task-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    min-height: calc(100vh - 275px);
+}
+
+.card-header-section{
+    display: flex;
+    justify-content: space-between;
+}
